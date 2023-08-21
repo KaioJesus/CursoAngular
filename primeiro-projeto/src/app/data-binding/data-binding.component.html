@@ -15,3 +15,40 @@
     {{idade * multiplicador}} <!-- Multiplicação -->
 </p>
 
+<br >
+<br >
+
+<hr>
+
+<h2>Property binding</h2>
+<button [disabled]="checkedDisabled">Buttons</button>  <!-- property binding -> quando um atributo recebe uma variável/método/função como valor-->
+
+<img [src]="imgSrc" [title]="imgTitle" [alt]="descricaoIMG">;
+
+<br >
+<br >
+
+<hr>
+
+<h2>Event binding</h2>
+
+<button (click)="alertaInfo($event)">Evento</button>  <!-- Event binding -> eventos declarados no html, nesse caso é um botão que quando clicado vai acontecer alguma coisa pelo método/função recebido -->
+
+<div (mousemove)="mouseMoveTeste($event)" style="background-color: red; width: 300px; height: 300px;">
+
+    {{position.x}} x {{position.y}}
+</div>
+
+<br >
+<br >
+
+<hr>
+
+<h2>Two-way binding</h2>
+ 
+<input [(ngModel)]="nome" type="text"> <!-- Reatividade em tempo real, nesse caso atualiza tudo que tiver o mesmo 'interpolation'  -->
+{{nome}}
+
+
+
+
