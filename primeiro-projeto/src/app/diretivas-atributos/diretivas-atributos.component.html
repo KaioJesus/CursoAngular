@@ -1,0 +1,82 @@
+<ng-content select="h1"></ng-content>
+
+<hr>
+
+<h2>Ng class!</h2>
+
+<!-- relativo a classe css -->
+<p [ngClass]="{'active' : valor, 'disabled' : !valor}">ng class</p>
+
+
+<br>
+<br>
+
+<hr>
+
+<!-- relativo as propriedades diretas do css -->
+
+
+<!-- <h2>Ng style!</h2>
+<p [ngStyle]="{'height' : altura, 'font-size': fonteP}">ng style</p> -->
+<br>
+<br>
+
+<hr>
+<!-- associado ao valor de input, digitaremos o valor no input e será retornado no html -->
+<!-- sempre teremos que importar no app.module o 'FormsModule' quando utilizamos o ngModel -->
+<h2>Ng Model!</h2>
+
+<!-- sempre quando digitar algo no input e clicar no botão, aparecerá na lista -->
+<input type="text" [(ngModel)]="nome">
+<button (click)="salvar()">Salvar</button>
+
+<!-- o for itera sobre o item da lista, nesse caso, toda vez que o botão for clicado, aparecerá um novo item -->
+<ul>
+    <li *ngFor="let item of list">{{item.nome}}</li>
+</ul>
+
+<br>
+<br>
+
+<hr>
+<!-- Cria um atributo html limpo que vai nos ajudar a fazer verificações com ngIf antes do DOM carregar -->
+<h2>Ng template</h2>
+
+
+<input type="text" [(ngModel)]="nome">
+<button (click)="salvar()">Salvar</button>
+<ng-template ngFor let-item [ngForOf]="list">
+    <!-- assim que funciona o ngFor no ng-template -->
+    <p>{{item.nome}}</p>
+</ng-template>
+<!-- 
+<br>
+<br>
+
+<hr> -->
+
+<!-- serve para determinar onde você quer pôr determinados elementos -->
+<!-- <ng-content select="h2"></ng-content> -->
+<!-- o h2 selectionado, é o h2 do app.component.html -->
+
+<br>
+<br>
+
+<hr>
+
+<h2>Pipe</h2>
+<!-- utilizado nas interpolations, ngFor -->
+
+<!-- | -> é o pipe -->
+<input type="text" [(ngModel)]="nome">
+<button (click)="salvar()">Salvar</button>
+
+<ul>
+    <li *ngFor="let item of list">{{item.nome | uppercase }}</li>
+</ul>
+
+{{date | date:'dd/MM/yyyy'}}
+
+
+
+

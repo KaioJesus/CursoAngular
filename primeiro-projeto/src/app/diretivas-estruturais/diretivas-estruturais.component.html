@@ -1,0 +1,42 @@
+<!-- Diretiva ngIf -> se a condição for verdadeira, elemento aparece, senão, não aparece -->
+<h2>*ngIf</h2>
+<p *ngIf="condition; else elseBlock">true</p> 
+<ng-template #elseBlock>
+    <p>False</p>
+</ng-template>
+
+<button (click)="onClick()">Clicar</button>
+<p *ngIf="conditionOnClick">True</p>
+<p *ngIf="!conditionOnClick">False</p>
+<!-- Começa com true, então aparece o true, quando clicar vai alterar -->
+
+<br>
+<br>
+
+<hr>
+
+<h2>ngFor</h2>
+
+<ul>
+    <!-- iterando sobre o array -->
+    <li *ngFor="let item of list; let i = index;" (click)="onClickEventList(i)" >[{{i}}] {{item.nome}} - {{item.idade}}</li>
+</ul>
+
+<!-- adicionar valor a lista de array sempre quando clicar -->
+<button (click)="onClickAddList()">Clicar</button>
+
+<br>
+<br>
+
+<hr>
+
+<h2>ngSwitch</h2>
+<!-- Condicinal switch, funciona igual outras linguagens de programação,  -->
+
+<input type="text" [(ngModel)]="nome">
+<div [ngSwitch]="nome">
+    <p *ngSwitchCase="'Kaio'">Kaio</p>
+    <p *ngSwitchCase="'Carol'">Carol</p>
+    <p *ngSwitchCase="'Kaua'">Kaua</p>
+    <p *ngSwitchDefault>Deu ruim</p>
+</div>
