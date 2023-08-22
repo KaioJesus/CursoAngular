@@ -9,4 +9,14 @@
 <app-diretivas-atributos></app-diretivas-atributos>
 <!-- <h2>ng-content</h2> -->
 <app-new-component></app-new-component>
+<app-input [contador]="addValue"></app-input>
+<!-- pegando dado do componente input, atributo 'contador', utilizando a função @Input -->
+<br>
+<button (click)="add()">Add</button>
+<!-- quando clicar no botao enviar dados ele vai vir no pegaDdos e emitir o valor -->
+<ng-template [ngIf]="pegaDados">
+    <h1>{{pegaDados.nome}}</h1>
+    <h1>{{pegaDados.idade}}</h1>
+</ng-template>
+<app-output (enviarDados) = "estabeleceDados($event)"></app-output>
 <router-outlet></router-outlet>

@@ -12,6 +12,10 @@ export class AppComponent implements OnInit{
   public valor: number = 1;
   public destruir: boolean = true;
 
+  public addValue: number = 0;
+
+  public pegaDados: {nome: string, idade: number} | undefined;
+  // tuple undefined -> vai deixar mexer nos valores dele;
   constructor() {}
 
   public adicionar():number{ //tipando a função que deve retornar sempre um número
@@ -38,6 +42,14 @@ export class AppComponent implements OnInit{
 
   public destruirComponente(){
     this.destruir = false;
+  }
+
+  public add(){
+    this.addValue += 1;
+  }
+
+  public estabeleceDados(e: {nome: string, idade: number}){
+    this.pegaDados = e;
   }
 }
 
