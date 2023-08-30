@@ -9,7 +9,6 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { DiretivasEstruturaisComponent } from './diretivas-estruturais/diretivas-estruturais.component';
 import { DiretivasAtributosComponent } from './diretivas-atributos/diretivas-atributos.component';
 import { SharedModule } from './shared/shared.module';
-import { ToDoListComponent } from './to-do-list/to-do-list.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import { ToDoListComponent } from './to-do-list/to-do-list.component';
     DataBindingComponent,
     DiretivasEstruturaisComponent,
     DiretivasAtributosComponent,
-    ToDoListComponent,
   ],
   imports: [
     BrowserModule,
